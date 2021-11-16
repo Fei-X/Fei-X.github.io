@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2021/11/16/确保服务器安全的操作和命令/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,19 +20,23 @@
   <meta content="Hexo" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1637066260490" as="style">
+  <link rel="preload" href="/css/style.css?time=1637066260459" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>Hexo</title>
-  <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <title>确保服务器安全的操作和命令 - Hexo</title>
+  <meta name="keywords" content="null">
+  <meta name="description" content="最近用root登入云服务器之后总是会出现多次失败登录服务器的信息。出现这样的情况，我就知道服务器ip暴露了，黑客正在暴破我的密码。在查询了应对措施之后，我对服务器的端口和登录用户进行了一些配置，在此记录。 登入root用户后出现以下信息： 123Last failed login: Mon MMM DD hh:mm:ss UTC YYYY from xxx.xxx.xxx.xxxx on ssh:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="确保服务器安全的操作和命令">
+<meta property="og:url" content="http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近用root登入云服务器之后总是会出现多次失败登录服务器的信息。出现这样的情况，我就知道服务器ip暴露了，黑客正在暴破我的密码。在查询了应对措施之后，我对服务器的端口和登录用户进行了一些配置，在此记录。 登入root用户后出现以下信息： 123Last failed login: Mon MMM DD hh:mm:ss UTC YYYY from xxx.xxx.xxx.xxxx on ssh:">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2021-11-16T11:20:15.000Z">
+<meta property="article:modified_time" content="2021-11-16T12:11:54.827Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1654,8 +1658,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1637066260490" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1637066260490"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1637066260459" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1637066260459"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2076,7 +2080,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files head end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2344,7 +2348,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="/images/background.svg"></div>
 
@@ -2385,7 +2389,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2395,130 +2399,222 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Hexo">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         确保服务器安全的操作和命令
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        最近用root登入云服务器之后总是会出现多次失败登录服务器的信息。出现这样的情况，我就知道服务器ip暴露了，黑客正在暴破我的密码。在查询了应对措施之后，我对服务器的端口和登录用户进行了一些配置，在此记录。
-登入root用户后出现以下信息：
-123Last failed login: Mon MMM DD hh:mm:ss UTC YYYY from xxx.xxx.xxx.xxxx on s...
-      
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2021-11-16T19:20:15+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Nov 16, 2021</p>
+  </a>
+</div>
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
     
   </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>最近用root登入云服务器之后总是会出现多次失败登录服务器的信息。出现这样的情况，我就知道服务器ip暴露了，黑客正在暴破我的密码。在查询了应对措施之后，我对服务器的端口和登录用户进行了一些配置，在此记录。</p>
+<p>登入root用户后出现以下信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Last failed login: Mon MMM DD hh:mm:ss UTC YYYY from xxx.xxx.xxx.xxxx on ssh:notty</span><br><span class="line">There were 355 failed login attempts since the last successful login.</span><br><span class="line">Last login: SUN MMM DD hh:mm:ss UTC YYYY from xxx.xxx.xxx.xxxx</span><br></pre></td></tr></table></figure>
+
+<p>运用命令 <code>lastb | head -n 10</code> 甚至可以看见最近几次的登陆攻击。</p>
+<p>因为云服务器提供商在初始状态下没有设置安全组策略，我只需要在服务器里进行配置。这里用了两种方法：</p>
+<ul>
+<li>禁止root通过ssh登录，需要新建用户进行ssh登录并赋予root权限</li>
+<li>更换远程登录的端口，禁用默认端口22</li>
+</ul>
+<p>对于服务器系统为CentOS7的情况下：</p>
+<p>查看当前ssh服务器端口号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果报“netstat: command not found”错误</span></span><br><span class="line"><span class="comment"># 先安装net-tools</span></span><br><span class="line">yum install net-tools</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看</span></span><br><span class="line">netstat -tunlp | grep ssh</span><br></pre></td></tr></table></figure>
+
+<p>ssh服务的配置文件路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>重启ssh服务让新的监听端口生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
+<p>linux添加新用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">adduser abc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line">passwd abc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改权限</span></span><br><span class="line">visudo</span><br><span class="line"><span class="comment"># 添加“abc ALL=(ALL) NOPASSWD:ALL&quot;，保存退出</span></span><br></pre></td></tr></table></figure>
+
+<p>SELinux给ssh开放10086端口bash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加端口</span></span><br><span class="line">semanage port -a -t ssh_port_t -p tcp 10086</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看开放端口</span></span><br><span class="line">semanage port -l | grep ssh</span><br></pre></td></tr></table></figure>
+
+<p>防火墙开启了10086端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看防火墙是否开启10086端口</span></span><br><span class="line">firewall-cmd --permanent --query-port=10086/tp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加端口</span></span><br><span class="line">firewall-cmd --permanent --add-port=10086/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载防火墙策略</span></span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启防火墙服务</span></span><br><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>
+
+
+  </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-11-16T19:20:15+08:00">2021-11-16</time>
-        
-      </div>
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/' itemprop="url">
-            Read More
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/>http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2021-11-16T20:11:54+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Nov 16, 2021</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/16/hello-world/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Hexo">
-  </span>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/&title=确保服务器安全的操作和命令 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/&title=确保服务器安全的操作和命令 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/&title=确保服务器安全的操作和命令 - Hexo&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/11/16/hello-world/'>
+          <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fas fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/11/16/hello-world/"  itemprop="url">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-11-16T15:49:55+08:00">2021-11-16</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/11/16/hello-world/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
 
-</div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+
 
 
 </div>
@@ -2528,87 +2624,24 @@ Qu...
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Hexo</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
+
+
+  <div class="pjax">
+    <!-- pjax占位 -->
   </div>
-</section>
-
-  
-
-  
-    
-    
-
-  
-
-  
-    
-    
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2644,8 +2677,8 @@ Qu...
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="确保服务器安全的操作和命令";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2654,15 +2687,15 @@ Qu...
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -2759,8 +2792,8 @@ Qu...
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637066260490')
-      volantis.js('/js/message.js?time=1637066260490', () => {
+      volantis.css('/css/message.css?time=1637066260459')
+      volantis.js('/js/message.js?time=1637066260459', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2805,8 +2838,8 @@ Qu...
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637066260490')
-      volantis.js('/js/message.js?time=1637066260490', () => {
+      volantis.css('/css/message.css?time=1637066260459')
+      volantis.js('/js/message.js?time=1637066260459', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2865,8 +2898,8 @@ Qu...
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1637066260490')
-      volantis.js('/js/message.js?time=1637066260490', () => {
+      volantis.css('/css/message.css?time=1637066260459')
+      volantis.js('/js/message.js?time=1637066260459', () => {
         hideMessage(done);
       });
     } else {
@@ -3098,7 +3131,7 @@ Qu...
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1637066260490')
+    volantis.js('/js/rightMenu.js?time=1637066260459')
   </script>
 
 
@@ -3112,19 +3145,19 @@ Qu...
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1637066260490")
+        volantis.js("/js/plugins/sites.js?time=1637066260459")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1637066260490")
+        volantis.js("/js/plugins/friends.js?time=1637066260459")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1637066260490")
+        volantis.js("/js/plugins/contributors.js?time=1637066260459")
       }
     
   };
@@ -3234,7 +3267,7 @@ Qu...
 
 
 
-<script src="/js/app.js?time=1637066260490.js"></script>
+<script src="/js/app.js?time=1637066260459.js"></script>
 
 
 <!-- optional -->
@@ -3247,7 +3280,7 @@ Qu...
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1637066260490");
+    return volantis.js("/js/search/hexo.js?time=1637066260459");
   }
 
   function loadSearchService() {
@@ -3494,7 +3527,7 @@ Qu...
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Hexo","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Hexo"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Hexo","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Hexo","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Hexo","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Hexo"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2021/11/16/确保服务器安全的操作和命令/","name":"确保服务器安全的操作和命令"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"确保服务器安全的操作和命令","description":"","datePublished":"2021-11-16T11:20:15.000Z","dateModified":"2021-11-16T12:11:54.827Z","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Hexo","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2021/11/16/%E7%A1%AE%E4%BF%9D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E5%85%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E5%92%8C%E5%91%BD%E4%BB%A4/","wordCount":0,"image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
